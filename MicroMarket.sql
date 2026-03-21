@@ -28,6 +28,7 @@ CREATE TABLE Proveedores (
 );
 
 CREATE TABLE Productos_Proveedores (
+	id BIGINT AUTO_INCREMENT PRIMARY KEY,
     id_producto INT,
     id_proveedor INT,
     PRIMARY KEY (id_producto, id_proveedor),
@@ -66,3 +67,6 @@ CREATE TABLE Detalle_Venta (
 );
 
 ALTER TABLE Ventas ADD deleted BOOLEAN DEFAULT FALSE;
+ALTER TABLE Detalle_Venta ADD deleted BOOLEAN DEFAULT FALSE;
+ALTER TABLE Products ADD deleted BOOLEAN DEFAULT FALSE;
+ALTER TABLE Products ADD deleted BOOLEAN DEFAULT FALSE;
