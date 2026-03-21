@@ -55,7 +55,7 @@ CREATE TABLE Ventas (
 );
 
 CREATE TABLE Detalle_Venta (
-    id_detalle INT AUTO_INCREMENT PRIMARY KEY,
+    id_detalle long AUTO_INCREMENT PRIMARY KEY,
     id_venta INT NOT NULL,
     id_producto INT NOT NULL,
     cantidad INT NOT NULL,
@@ -64,3 +64,5 @@ CREATE TABLE Detalle_Venta (
     FOREIGN KEY (id_venta) REFERENCES Ventas(id_venta),
     FOREIGN KEY (id_producto) REFERENCES Products(id_producto)
 );
+
+ALTER TABLE Ventas ADD deleted BOOLEAN DEFAULT FALSE;
