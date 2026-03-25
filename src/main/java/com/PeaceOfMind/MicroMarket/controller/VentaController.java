@@ -1,36 +1,31 @@
 package com.PeaceOfMind.MicroMarket.controller;
 
-import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.PeaceOfMind.MicroMarket.dtos.VentaDTO;
+import com.PeaceOfMind.MicroMarket.entity.Venta;
 import com.PeaceOfMind.MicroMarket.services.VentaService;
 
 @RestController
 @RequestMapping("/ventas")
-public class VentasController {
+public class VentaController {
 
-    @Autowired
-    private VentaService ventaService;
+    private final VentaService ventaService;
 
-    @GetMapping
-    public List<VentaDTO> getAll() {
-        return ventaService.getAllVentas();
+    public VentaController(VentaService ventaService) {
+        this.ventaService = ventaService;
     }
 
     @PostMapping
-    public VentaDTO create(@RequestBody VentaDTO ventaDTO) {
-        return ventaService.saveVenta(ventaDTO);
+    public Venta crear(@RequestBody VentaDTO ventaDTO) {
+        return ventaService.crearVenta(ventaDTO);
     }
-
-    @GetMapping("/{id}")
-    public VentaDTO getById(@PathVariable Long id) {
-        return ventaService.getVenta(id);
-    }
-
-    @DeleteMapping("/{id}")
-    public VentaDTO delete(@PathVariable Long id) {
-        return ventaService.deleteVenta(id);
-    }
+    @GetMapping("/test")
+public String test() {
+    return "FUNCIONA";
+}
 }

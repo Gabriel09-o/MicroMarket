@@ -1,20 +1,21 @@
 package com.PeaceOfMind.MicroMarket.dtos;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class VentaDTO {
 
     private Long id;
     private Long empleadoId;
-    private Double subtotal;
-    private Double iva;
-    private Double total;
+    private BigDecimal subtotal;
+    private BigDecimal iva;
+    private BigDecimal total;
     private List<DetalleVentaDTO> detalles;
 
     public VentaDTO() {}
 
-    public VentaDTO(Long id, Long empleadoId, Double subtotal,
-                    Double iva, Double total,
+    public VentaDTO(Long id, Long empleadoId, BigDecimal subtotal,
+                    BigDecimal iva, BigDecimal total,
                     List<DetalleVentaDTO> detalles) {
         this.id = id;
         this.empleadoId = empleadoId;
@@ -30,14 +31,14 @@ public class VentaDTO {
     public Long getEmpleadoId() { return empleadoId; }
     public void setEmpleadoId(Long empleadoId) { this.empleadoId = empleadoId; }
 
-    public Double getSubtotal() { return subtotal; }
-    public void setSubtotal(Double subtotal) { this.subtotal = subtotal; }
+    public BigDecimal getSubtotal() { return subtotal; }
+    public void setSubtotal(BigDecimal subtotal) { this.subtotal = subtotal; }
 
-    public Double getIva() { return iva; }
-    public void setIva(Double iva) { this.iva = iva; }
+    public BigDecimal getIva() { return iva; }
+    public void setIva(BigDecimal iva) { this.iva = iva; }
 
-    public Double getTotal() { return total; }
-    public void setTotal(Double total) { this.total = total; }
+    public BigDecimal getTotal() { return total; }
+    public void setTotal(BigDecimal total) { this.total = total; }
 
     public List<DetalleVentaDTO> getDetalles() { return detalles; }
     public void setDetalles(List<DetalleVentaDTO> detalles) { this.detalles = detalles; }
