@@ -5,13 +5,14 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/MicroMarket
     username: root
-    password: Jesus4488
+    password:
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
+  
     database-platform: org.hibernate.dialect.MySQLDialect
     hibernate:
-      ddl-auto: none
+      ddl-auto: create-drop
     show-sql: true
     propoties:
       hibernate:

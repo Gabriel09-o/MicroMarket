@@ -1,5 +1,8 @@
 package com.PeaceOfMind.MicroMarket.dtos;
 
+import lombok.Data;
+
+@Data
 public class DetalleVentaDTO {
 
     private Long id;
@@ -8,11 +11,12 @@ public class DetalleVentaDTO {
     private Double precioUnitario;
     private Double subtotal;
 
-    public DetalleVentaDTO() {}
+    public DetalleVentaDTO() {
+    }
 
     public DetalleVentaDTO(Long id, Long productoId,
-                           Integer cantidad, Double precioUnitario,
-                           Double subtotal) {
+            Integer cantidad, Double precioUnitario,
+            Double subtotal) {
         this.id = id;
         this.productoId = productoId;
         this.cantidad = cantidad;
@@ -20,18 +24,43 @@ public class DetalleVentaDTO {
         this.subtotal = subtotal;
     }
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    public Long getId() {
+        return id;
+    }
 
-    public Long getProductoId() { return productoId; }
-    public void setProductoId(Long productoId) { this.productoId = productoId; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    public Integer getCantidad() { return cantidad; }
-    public void setCantidad(Integer cantidad) { this.cantidad = cantidad; }
+    public Long getProductoId() {
+        return productoId;
+    }
 
-    public Double getPrecioUnitario() { return precioUnitario; }
-    public void setPrecioUnitario(Double precioUnitario) { this.precioUnitario = precioUnitario; }
+    public void setProductoId(Long productoId) {
+        this.productoId = productoId;
+    }
 
-    public Double getSubtotal() { return subtotal; }
-    public void setSubtotal(Double subtotal) { this.subtotal = subtotal; }
+    public Integer getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(Integer cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public Double getPrecioUnitario() {
+        return precioUnitario;
+    }
+
+    public void setPrecioUnitario(Double precioUnitario) {
+        this.precioUnitario = precioUnitario;
+    }
+
+    public Double getSubtotal() {
+        return subtotal;
+    }
+
+    public void setSubtotal(Double subtotal) {
+        this.subtotal = subtotal;
+    }
 }

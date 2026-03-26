@@ -1,20 +1,12 @@
 package com.PeaceOfMind.MicroMarket.entity;
 
-import java.math.BigDecimal;
+import jakarta.persistence.*;
+import lombok.Data;
 import java.time.LocalDate;
+import java.util.stream.Stream;
 
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.SQLRestriction;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.Data;
 
 @SQLDelete(sql = "UPDATE Empleados SET deleted = true WHERE id_empleado = ?")
 @SQLRestriction("deleted = false")
@@ -42,9 +34,14 @@ public class Empleado {
     @Column(name = "fecha_ingreso", nullable = false)
     private LocalDate fechaIngreso;
 
-    @Column(nullable = false, precision = 10, scale = 2)
-    private BigDecimal salario;
+    @Column(nullable = false)
+    private double salario;
 
     @Column(nullable = false)
-    private Boolean deleted = false;
+    private boolean deleted = false;
+
+    public Stream<Empleado> stream() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'stream'");
+    }
 }

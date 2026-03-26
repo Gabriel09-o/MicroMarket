@@ -10,6 +10,7 @@ import org.hibernate.annotations.SQLRestriction;
 @Table(name = "Productos_Proveedores")
 @SQLDelete(sql = "UPDATE Productos_Proveedores SET deleted = true WHERE id = ?")
 @SQLRestriction("deleted = false")
+
 @Data
 public class ProductoProveedor {
 
@@ -26,5 +27,5 @@ public class ProductoProveedor {
     private Proveedor proveedor;
 
     @Column(nullable = false)
-    private Boolean deleted = false;
+    private boolean deleted = false;
 }

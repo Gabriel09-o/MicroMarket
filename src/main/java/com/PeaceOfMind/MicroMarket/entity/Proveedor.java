@@ -35,5 +35,5 @@ public class Proveedor {
     private String direccion;
 
     @Column(nullable = false)
-    private Boolean deleted = false;
+    private boolean deleted = false;
 }

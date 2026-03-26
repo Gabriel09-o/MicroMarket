@@ -1,10 +1,5 @@
 package com.PeaceOfMind.MicroMarket.entity;
 
-import java.math.BigDecimal;
-
-import org.hibernate.annotations.SQLDelete;
-import org.hibernate.annotations.SQLRestriction;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,6 +9,9 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
+
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.SQLRestriction;
 
 @SQLDelete(sql = "UPDATE Detalle_Venta SET deleted = true WHERE id_detalle = ?")
 @SQLRestriction("deleted = false")
@@ -37,14 +35,14 @@ public class DetalleVenta {
     private Product producto;
 
     @Column(nullable = false)
-    private Integer cantidad;
-
-    @Column(name = "precio_unitario", nullable = false, precision = 10, scale = 2)
-    private BigDecimal precioUnitario;
-
-    @Column(nullable = false, precision = 10, scale = 2)
-    private BigDecimal subtotal;
+    private int cantidad;
 
     @Column(nullable = false)
-    private Boolean deleted = false;
+    private double precioUnitario;
+
+    @Column(nullable = false)
+    private double subtotal;
+
+    @Column(nullable = false)
+    private boolean deleted = false;
 }

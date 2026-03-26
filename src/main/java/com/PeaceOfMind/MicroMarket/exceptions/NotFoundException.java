@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ResponseStatus(HttpStatus.NOT_FOUND)
 public class NotFoundException extends RuntimeException {
 
-    public NotFoundException(String resourceName, Long id) {
-        super(String.format("Recurso no encontrado: %s - ID: %d", resourceName, id));
+    public NotFoundException(String resourceName, String id) {
+        super(String.format("Element not found: %s - ID: %s", resourceName, id));
     }
+
 }
